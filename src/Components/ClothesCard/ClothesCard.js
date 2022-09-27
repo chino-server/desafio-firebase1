@@ -15,17 +15,15 @@ const ClothesCard = ({ clothesData }) => {
 						Artista: {clothesData.title}
 					</Typography>
 					<Typography variant='body2' color='text.secondary'>
-						Album: 
+						Album: {clothesData.category}
 					</Typography>
 					<Typography variant='body2' color='text.secondary'>
 						Price: ${clothesData.price}
 					</Typography>
 					<Typography variant='body2' color='text.secondary'>
-						Stock: 
+						detalle: {clothesData.title} 
 					</Typography>
-					<Typography variant='body2' color='text.secondary'>
-						Stock: 
-					</Typography>
+					
 				</CardContent>
 			</CardActionArea>
 		</Card>
