@@ -6,7 +6,7 @@ import "./CardList.css"
 import { collection, query, getDocs} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import ClothesCard from "../ClothesCard/ClothesCard"
-import { Link } from "@mui/material"
+import { Link } from "react-router-dom"
 
 
 const CardList = () => {
