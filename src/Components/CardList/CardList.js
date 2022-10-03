@@ -5,8 +5,8 @@ import "./CardList.css"
 
 import { collection, query, getDocs} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
-import { async } from "@firebase/util"
 import ClothesCard from "../ClothesCard/ClothesCard"
+import { Link } from "@mui/material"
 
 
 const CardList = () => {
@@ -17,7 +17,8 @@ const CardList = () => {
             const docs = []
             const querySnapshot = await getDocs (q);
             querySnapshot.forEach ((doc)=>{
-                docs.push({ ...doc.data(), id2:doc.id})
+               
+                docs.push({ ...doc.data(), id:doc.id})
               
             })
            setClothesData (docs)
@@ -25,16 +26,16 @@ const CardList = () => {
         }
         getClothes ()
     },[])
-    console.log (clothesData)
+   console.log (clothesData)
     return (
 		<div className='CardListContainer'>
-			{clothesData.map((clothes) => {
-				return (
-					<div key={clothes.id}>
-						<ClothesCard clothesData={clothes} />
-					</div>
-				);
-			})}
+			{clothesData.map((data) => {
+						return (
+							<Link to={`detail/${data.id}`} key={data.id}>
+								<ClothesCard clothesData={data} />
+							</Link>
+						);
+					})}
 		</div>
 	);
 };
