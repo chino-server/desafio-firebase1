@@ -12,6 +12,7 @@ import {
 } from 'firebase/firestore';
 
 import ClothesCard from '../ClothesCard/ClothesCard';
+import Shop from '../Shop/Shop';
 
 
 
@@ -43,11 +44,15 @@ const ItemDetail = () => {
 
 	return (
 		<div>
+			<Shop></Shop>
 			{clothesData.map ((data)=>{
                 return <ClothesCard clothesData={data}/>
+				
+				
             })}
 			
 		</div>
+		
 	);
 };
 
